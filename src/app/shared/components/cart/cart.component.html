@@ -1,0 +1,59 @@
+<!-- <div *ngIf="items.length > 0">
+  <h2>Your Cart</h2>
+  <div *ngFor="let movie of items">
+    <h3>{{ movie.title }}</h3>
+    <p>Release Date: {{ movie.release_date | date }}</p>
+    <button (click)="removeFromCart(movie)">Remove</button>
+  </div>
+  <button (click)="checkout()">Proceed to Payment</button>
+</div>
+<div *ngIf="items.length === 0">
+  <p>Your cart is empty.</p>
+</div> -->
+
+
+
+<body>
+<div  *ngIf="items.length > 0" class="moviesContainer">
+  <div class="h2">
+    <h2>Your Cart</h2>
+  </div>
+  
+  <ul>
+    <li *ngFor="let movie of items">
+      <div>
+      <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" alt="{{ movie.title }}">
+      <button (click)="removeFromCart(movie)" class="remove"></button>
+    </div>
+      <span>{{ movie.title }}</span>
+    </li>
+  </ul>
+  <div class="btn">
+    <button (click)="checkout()">Proceed to Payment</button>
+  </div> 
+</div>
+<div *ngIf="items.length === 0">
+  <p>Your cart is empty.</p>
+</div>
+</body>
+<!-- <div class="cart-container">
+    <h2>Your Cart</h2>
+    <ul class="cart-items">
+       Cart items will be dynamically populated here 
+      <li class="cart-item">
+        <div class="item-details">
+          <img class="item-image" src="item-image-url.jpg" alt="Item Image">
+          <div class="item-info">
+            <h3 class="item-name">Item Name</h3>
+            <p class="item-price">$10.99</p>
+          </div>
+        </div>
+        <button class="remove-btn">Remove</button>
+      </li>
+    </ul>
+    <div class="cart-total">
+      <p>Total: $50.95</p>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div> -->
+  

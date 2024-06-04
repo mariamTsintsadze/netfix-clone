@@ -1,0 +1,53 @@
+
+<body>
+  
+    <div class="container">
+   <a class="link" (click)="goBack()">Back home</a>   
+<h2>Payment Information</h2>
+<p>Total Price: ${{ totalPrice }}</p>
+<form [formGroup]="paymentForm" (ngSubmit)="submitPayment()">
+  <div class="inputs">
+    <label for="cardNumber">Card Number:</label>
+    <div class="cont">
+        <input id="cardNumber" formControlName="cardNumber" type="text" [class.invalid]="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)">
+        <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)" class="error">
+        <span *ngIf="cardNumber?.errors?.['required']">Card Number is required.</span>
+        <span *ngIf="cardNumber?.errors?.['pattern']">Card Number must be 16 digits.</span>
+        </div>
+    </div>
+  </div>
+  <div class="inputs">
+    <label for="cardHolder">Card Holder:</label>
+    <div class="cont">
+        <input id="cardHolder" formControlName="cardHolder" type="text" [class.invalid]="cardHolder?.invalid && (cardHolder?.dirty || cardHolder?.touched)">
+        <div *ngIf="cardHolder?.invalid && (cardHolder?.dirty || cardHolder?.touched)" class="error">
+        <span *ngIf="cardHolder?.errors?.['required']">Card Holder is required.</span>
+        </div>
+    </div>
+  </div>
+  <div class="inputs">
+    <label for="expirationDate">Expiration Date (MM/YYYY):</label>
+    <div class="cont">
+        <input id="expirationDate" formControlName="expirationDate" type="text" [class.invalid]="expirationDate?.invalid && (expirationDate?.dirty || expirationDate?.touched)">
+        <div *ngIf="expirationDate?.invalid && (expirationDate?.dirty || expirationDate?.touched)" class="error">
+        <span *ngIf="expirationDate?.errors?.['required']">Expiration Date is required.</span>
+        <span *ngIf="expirationDate?.errors?.['invalidDate']">Invalid date format. Use MM/YYYY.</span>
+        <span *ngIf="expirationDate?.errors?.['expired']">Expiration date has passed.</span>
+        </div>
+    </div>
+  </div>
+  <div class="inputs">
+    <label for="cvv">CVV:</label>
+    <div class="cont">
+        <input id="cvv" formControlName="cvv" type="text" [class.invalid]="cvv?.invalid && (cvv?.dirty || cvv?.touched)">
+        <div *ngIf="cvv?.invalid && (cvv?.dirty || cvv?.touched)" class="error">
+        <span *ngIf="cvv?.errors?.['required']">CVV is required.</span>
+        <span *ngIf="cvv?.errors?.['pattern']">CVV must be 3 digits.</span>
+        </div>
+    </div> 
+  </div>
+  <button type="submit">Submit Payment</button>
+</form>
+</div>
+</body>
+

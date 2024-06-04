@@ -1,0 +1,26 @@
+<div *ngIf="favoriteMovies.length > 0" class="favMoviesContainer">
+    <h2>Favorite Movies</h2>
+    <ul>
+      <li *ngFor="let movie of favoriteMovies; let i = index">
+        <div class="cont">
+          <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" alt="{{ movie.title }}">
+          <!-- <button *ngIf="!isMovieInCart(movie)" (click)="buyMovie(movie)">Buy</button>
+          <button (click)="removeFromFavorites(movie)"></button> -->
+          <div class="dropdown" *ngIf="movie.isPremium" [class.active]="activeDropdownIndex === i">
+            <button id="button" class="dropbtn"  (click)="toggleDropdown(i)">Options</button>
+            <div class="dropdown-content">
+              <a *ngIf="!isMovieInCart(movie)" (click)="buyMovie(movie)">Buy</a>
+              <a (click)="removeFromFavorites(movie)">remove</a>
+            </div>
+          </div>
+          <div class="dropdown1" *ngIf="!movie.isPremium">
+            <button class="dropbtn1"  (click)="removeFromFavorites(movie)" style="background-color: rgb(169, 245, 219);color: black;">remove</button>
+          </div>
+        </div>
+        <span>{{ movie.title }}</span>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="favoriteMovies.length === 0">
+    <p>No favorite movies added yet.</p>
+  </div>

@@ -1,0 +1,47 @@
+<app-header [userImg]="userProfileImg" />
+
+<!-- <app-banner *ngIf="selectedMovie"
+  [bannerTitle]="selectedMovie.title" 
+  [bannerOverview]="selectedMovie.overview" 
+  [key]="selectedMovie.trailerKey"
+></app-banner> -->
+
+
+<app-banner [bannerTitle]="(bannerDetail$ | async)?.original_title" [bannerOverview]="(bannerDetail$ | async)?.overview"
+  [key]="(bannerVideo$ | async)?.results[0].key" ></app-banner> 
+ <!-- search -->
+ <div class="browse">
+  <div class="container">
+    <div class="searchBar">
+      <input type="text" [(ngModel)]="query" placeholder="Search for a movie">
+      <button (click)="onSearch()">Search</button>
+   </div>
+    <div class="searchedMovies" *ngIf="searchedMovies">
+        <div *ngFor="let movie of searchedMovies" class="movie" (click)="goToMovieDetails(movie.id)">
+          <div>
+            <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path" alt="foto">  
+          </div>
+          <div class="info">
+          <h2>{{ movie.title }}</h2>
+            <p>Released: {{ movie.release_date }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+    </div>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
+
+<app-movie-carousel [title]="'Popular on Netflix'" [content]="movies" (favoriteMoviesChange)="onFavoriteMoviesChange($event)"></app-movie-carousel>
+
+<app-movie-carousel [title]="'Trending TV shows'" [content]="tvShows" (favoriteMoviesChange)="onFavoriteMoviesChange($event)"></app-movie-carousel>
+
+<app-movie-carousel [title]="'Now Playing Movies'" [content]="nowPlayingMovies" (favoriteMoviesChange)="onFavoriteMoviesChange($event)"></app-movie-carousel>
+
+<app-movie-carousel [title]="'Popular Movies'" [content]="popularMovies" (favoriteMoviesChange)="onFavoriteMoviesChange($event)"></app-movie-carousel>
+
+<app-movie-carousel [title]="'Top Rated Movies'" [content]="topRatedMovies" (favoriteMoviesChange)="onFavoriteMoviesChange($event)"></app-movie-carousel>
+
+<app-movie-carousel [title]="'Upcoming Movies'" [content]="upcomingMovies" (favoriteMoviesChange)="onFavoriteMoviesChange($event)"></app-movie-carousel>
+
+<app-favorite-movies [favoriteMovies]="favoriteMovies"></app-favorite-movies>
+</div>

@@ -1,0 +1,163 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(19, 19, 19);
+    // border: 1px solid white;
+}
+.backgroundImg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    opacity: 0.6;
+    z-index: -1;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.poster{
+    width: 350px;
+    height: 500px;
+    background: none;
+    border-radius: 10%;
+}
+.image{
+    margin-right: -20%;
+    width: 350px;
+    height: 500px;
+}
+h1
+{
+    color: rgb(247, 247, 138);
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+h2,h3{
+    font-size: 15px;
+}
+.info{
+    width: 50%;
+    gap: 20px;
+}
+.info_child{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 5px;
+}
+
+p{
+    width: 80%;
+    margin-top: 25px;
+    color: whitesmoke;
+    // font-size: smaller;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+button{
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(247, 247, 138);
+    font-weight: bold;
+    border: none;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-right: 15px;
+}
+button:hover{
+    background-color: rgb(248, 248, 116);
+}
+.link{
+    position: relative;
+    top: 50px;
+    // background-color: #E50914;
+    width: 70px;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover{
+    width: 100px;
+    background-color: #79bbe7;
+    color: black;
+    border-radius: 15px;
+    padding: 5px 8px;
+    // border: 2px solid #ffffff;
+}
+@media screen and (max-width: 800px){
+    .container{
+        margin-top: 10%;
+    }
+    .poster{
+        width: 80%;
+        height: 75%;
+        margin-right: 20%;
+    }
+    h1{
+        margin-top: -90px;
+        font-size: 150%;
+    }
+    h2,h3{
+        font-size: small;
+        margin-top: 1px;
+    }
+    .par{
+        font-size: 12px;
+        width: 250px;
+        margin-top: 5px;
+    }
+    button{
+        width: 120px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 650px){
+    .poster{
+        width: 70%;
+        height: 75%;
+        margin-right: -20%;
+    }
+}
+@media screen and (max-width: 600px){
+    .poster{
+        width: 60%;
+        height: 50%;
+        margin-left: -35%;
+        margin-top: -90px;
+    }
+    .movie_info{
+        margin-top: 150%;
+        margin-left: 35%;
+    }
+    h1{
+        width: 100%;
+        text-align: center;
+        margin-left: 35%;
+    }
+    button{
+        margin-left: 63%;
+    }
+    h2,h3{
+        width: 45vw;
+        text-align: center;
+        margin-left: 10%;
+    }
+    .par{
+        text-align: center;
+    }
+    .div{
+        margin-bottom: 80px;
+        margin-top: -50px;
+    }
+}

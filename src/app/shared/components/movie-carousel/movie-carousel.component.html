@@ -1,0 +1,39 @@
+<div class="container">
+  <p class="text">{{title}}</p>
+  <div #swiperContainer class="swiper-container">
+    <div class="swiper-wrapper">
+      <ng-container *ngFor="let movie of content; let i = index">
+        <div  (mouseenter)="setHoverMovie(movie)" (mouseleave)="clearHoverMovie()" class="swiper-slide">
+          <div class="btn">
+            <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" (click)="goToMovieDetails(movie.id)" alt="{{movie.title}}" >
+            <!-- <button   (click)="toggleButton($event)"></button> -->
+            <!-- <button>[ngClass]="{ 'active': isMovieFavorited(movie) }" (click)="handleClick(movie)"</button> -->
+          </div>
+          <div @fade *ngIf="(movie.title===this.selectedContent) || (movie.name === this.selectedContent)" (click)="addToFavorites(movie)" class="desc">
+            <span class="text-wrapper">{{movie.original_title}}</span>
+            <p class="text_2">{{movie.overview | description}}</p>
+            <div class="avr">
+              <p class="text_3">
+                <span class="text-green">Vote Average : {{movie.vote_average}}</span>
+                <i class="fa fa-2x fa-chevron-circle-down" aria-hidden="true"></i>
+              </p>
+            </div>
+            
+          </div>
+          <div class="dropdown" *ngIf="movie.isPremium" [class.active]="activeDropdownIndex === i">
+            <button class="dropbtn"  (click)="toggleDropdown(i)">Options</button>
+            <div class="dropdown-content">
+              <a (click)="addToFavorites(movie)" *ngIf="!isMovieInFavorites(movie)">Add to Favorites</a>
+              <a (click)="addToCart(movie)" *ngIf="!isMovieInCart(movie)">Buy</a>
+            </div>
+          </div>
+          <div class="dropdown1" *ngIf="!movie.isPremium">
+            <button class="dropbtn"  (click)="addToFavorites(movie)" style="background-color: rgb(169, 245, 219);color: black;">favorites</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <!-- <div class="swiper-button-next">arrow</div>
+    <div class="swiper-button-prev">arrow</div> -->
+  </div>
+</div>

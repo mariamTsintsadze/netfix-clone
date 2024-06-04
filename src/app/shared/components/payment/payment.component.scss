@@ -1,0 +1,128 @@
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+  
+.error {
+    color: red;
+    font-size: 12px;
+}
+.link{
+    position: relative;
+    width: 140px;
+    top: -30px;
+    // left: 220px;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover{
+    width: 140px;
+    text-align: center;
+    background-color: #79bbe7;
+    color: black;
+    border-radius: 15px;
+    padding: 5px 8px;
+    // border: 2px solid #ffffff;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    background-image: url('https://www.whats-on-netflix.com/wp-content/uploads/2023/06/whats-on-netflix-category-banner-jpg.webp');
+    // background-image: url('https://www.tech-talk.co.za/wp-content/uploads/2022/05/Netflix-1.jpg');
+    background-size: cover; 
+    background-position: center; 
+    // width: 150vw;
+    height: 100vh;
+    
+}
+.container{
+    margin-left: 60%;
+    width: 450px;
+    height: 370px;
+    background-color: rgba(243, 211, 211, 0.815);
+    border-radius: 20px;
+}
+form{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    margin-left: 20px;
+}
+.inputs{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    margin-bottom: 5px;
+    margin-left: 22PX;
+}
+button{
+    margin-top: 25px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #badaef; 
+}
+.cont{
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+}
+h2,p{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
+}
+label{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+input{
+    border-radius: 15px;
+    border: none;
+    // background-color: #badaef;
+}
+@media screen and (max-width: 1200px){
+    .container{
+        max-width: 100%;
+        margin-right: 15%;
+    }
+}
+@media screen and (max-width: 950px){
+    .container{
+        max-width: 100%;
+        margin-right: 20%;
+    }
+}
+@media screen and (max-width: 800px){
+    .container{
+        max-width: 100%;
+        margin-right: 60%;
+    }
+}
+@media screen and (max-width: 500px){
+    .container{
+        max-width: 85%;
+        margin-right: 60%;
+    }
+}

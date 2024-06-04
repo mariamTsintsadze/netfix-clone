@@ -1,0 +1,150 @@
+/* .bg-main{
+    height: 68px;
+    z-index: 10;
+}
+.dark-nav{
+    background-color: #141414;
+} */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.header {
+    height: 68px;
+    background-color: #1f1f1f;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 10;
+}
+.header-logo-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.header-logo {
+    width: 110px;
+}
+.header-nav{
+    width: 80%;
+    display: flex;
+    /* border: 1px solid white; */
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 20%; */
+    
+}
+.header-nav ul {
+    /* width: 50px; */
+    display: flex;
+    /* gap: 10px; */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+}
+.header-nav li {
+    color: #e5e5e5;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 200;
+    transition: color 1s;
+    flex-wrap: nowrap;
+    width:90px;
+}
+.header-nav li:hover {
+    color: #7e7e7e;
+}
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: white;
+    font-size: 1rem;
+}
+.header-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.header-user img {
+    width: 35px;
+    border-radius: 50%;
+}
+.header-user a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    /* width: 150px; */
+}
+.cart-icon{
+    width: 50px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    align-items:first baseline;
+    justify-content: first baseline;
+    // border: 1px solid white;
+}
+
+.bi-cart2{
+    // margin-top: 20px;
+    size: 20px;
+    color: #ffffff;
+}
+.cart-count{
+    position: relative;
+    // margin-right: -2px;
+    // right: 38px;
+    color: #E50914;
+    // top: 30px;
+    bottom: 11px;
+    left: 8px;
+}
+
+button
+{
+    background-color: #E50914;
+    color: #ffffff;
+}
+
+button:hover
+{
+    background-color: #E50914;
+    color: #ffffff;
+}
+
+img{
+    width: 100%;
+    cursor: pointer;
+}
+
+h5
+{
+    color: #ffffff;
+}
+@media screen and (max-width: 600px){
+    .link{
+        width: 150px;
+        text-align: center;
+        font-size: small;
+        margin-right: -10px;
+    }
+    .sign{
+        font-size: small;
+    }
+    .userimg{
+        width: 50px;
+    }
+    .header-user-info a{
+        display: none;
+    }
+    .header-user-info{
+        margin-left: 40px;
+    }
+}

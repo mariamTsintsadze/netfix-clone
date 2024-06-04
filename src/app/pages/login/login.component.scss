@@ -1,0 +1,67 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  background-image: url('https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/netflixteaser.png');
+  // background-image: url('https://www.tech-talk.co.za/wp-content/uploads/2022/05/Netflix-1.jpg');
+  background-size: cover;
+  background-position: center; 
+  width: 100vw;
+  height: 100vh;
+  padding-left: 10%;
+}
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #ffffff; 
+    border-radius: 0.5rem; 
+    height: 260px;
+  }
+  h1{
+    font-size: 1.875rem; 
+    line-height: 2.25rem;
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
+  }
+  .link{
+    width:100%;
+    // margin-left: 40%;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(68, 175, 169);
+    margin-top: 5px;
+    cursor: pointer;
+    z-index: 5; 
+    // border: 1px solid white; 
+  }
+  .link:hover{
+    color: rgb(14, 123, 117);
+  }
+  #google-btn{
+    margin-bottom: 30px;
+    // width: 30%;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 400px; 
+      margin-left: 25%;
+    }
+  }
+  @media (max-width: 550px) {
+    .container {
+      width: 370px; 
+      margin-left: 5%;
+    }
+  }
+ 
+  
+  
